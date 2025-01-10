@@ -30,4 +30,8 @@ $ allure serve report
 ```
 
 # Test report docs screenshot
+## overview
+![test report screenshot](https://github.com/MRX760/QA-practice/blob/main/Indonesia_indicator/Python/assets/allure_report2.png)
+
+## report screenshot with image documentation
 ![test report screenshot](https://github.com/MRX760/QA-practice/blob/main/Indonesia_indicator/Python/assets/allure_report1.png)
