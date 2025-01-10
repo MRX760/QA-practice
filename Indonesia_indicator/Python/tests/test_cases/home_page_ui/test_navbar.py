@@ -35,60 +35,60 @@ def test_user_will_redirected_to_whoarewe_page_when_user_click_whoarewe_menu(bro
     is_url_same(home, "https://indonesiaindicator.com/who-we-are")
     
 
-# def test_user_will_redirected_to_strategicFramework_page_when_user_click_strategicFramework_menu(browser_driver):   
-#     driver = browser_driver
-#     home = Home_page(driver)
-#     navigate_url(home, home.url)
-#     driver.fullscreen_window()
-#     take_page_screenshot(home.driver, "rendered web at the beginning")
-#     home.click_btn(home.strategy)
-#     element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[4]/div/p"), time=60)
-#     assert element.text == 'By integrating insights across various sectors, we equip decision-makers with the tools they need to anticipate challenges and seize opportunities with confidence.'
-#     is_url_same(home, "https://indonesiaindicator.com/strategic-framework")
+def test_user_will_redirected_to_strategicFramework_page_when_user_click_strategicFramework_menu(browser_driver):   
+    driver = browser_driver
+    home = Home_page(driver)
+    navigate_url(home, home.url)
+    driver.fullscreen_window()
+    take_page_screenshot(home.driver, "rendered web at the beginning")
+    home.click_btn(home.strategy)
+    element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[4]/div/p"), time=60)
+    assert element.text == 'By integrating insights across various sectors, we equip decision-makers with the tools they need to anticipate challenges and seize opportunities with confidence.'
+    is_url_same(home, "https://indonesiaindicator.com/strategic-framework")
 
-# def test_user_will_redirected_to_product_page_when_user_click_product_menu(browser_driver):   
-#     driver = browser_driver
-#     home = Home_page(driver)
-#     navigate_url(home, home.url)
-#     driver.fullscreen_window()  
-#     take_page_screenshot(home.driver, "rendered web at the beginning")
-#     home.click_btn(home.product)
-#     element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[3]/div/p"), time=60)
-#     assert element.text == 'We provide an integrated platform that enhances decision-making by offering real-time data and predictive analytics.'
-#     is_url_same(home, "https://indonesiaindicator.com/product")
+def test_user_will_redirected_to_product_page_when_user_click_product_menu(browser_driver):   
+    driver = browser_driver
+    home = Home_page(driver)
+    navigate_url(home, home.url)
+    driver.fullscreen_window()  
+    take_page_screenshot(home.driver, "rendered web at the beginning")
+    home.click_btn(home.product)
+    element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[3]/div/p"), time=60)
+    assert element.text == 'We provide an integrated platform that enhances decision-making by offering real-time data and predictive analytics.'
+    is_url_same(home, "https://indonesiaindicator.com/product")
 
-# def test_user_will_redirected_to_news_page_when_user_click_news_menu(browser_driver):   
-#     driver = browser_driver
-#     home = Home_page(driver)
-#     navigate_url(home, home.url)
-#     driver.fullscreen_window() 
-#     take_page_screenshot(home.driver, "rendered web at the beginning")
-#     home.click_btn(home.news)
-#     element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[3]/h1[2]"), time=60)
-#     assert element.text == 'Recent News Post'
-#     is_url_same(home, "https://indonesiaindicator.com/news")
+def test_user_will_redirected_to_news_page_when_user_click_news_menu(browser_driver):   
+    driver = browser_driver
+    home = Home_page(driver)
+    navigate_url(home, home.url)
+    driver.fullscreen_window() 
+    take_page_screenshot(home.driver, "rendered web at the beginning")
+    home.click_btn(home.news)
+    element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[3]/h1[2]"), time=60)
+    assert element.text == 'Recent News Post'
+    is_url_same(home, "https://indonesiaindicator.com/news")
 
-# def test_user_will_redirected_to_i2academy_page_when_user_click_i2academy_menu(browser_driver):   
-#     driver = browser_driver
-#     home = Home_page(driver)
-#     navigate_url(home, home.url)
-#     driver.fullscreen_window() 
-#     take_page_screenshot(home.driver, "rendered web at the beginning")
-#     home.click_btn(home.i2academy)
-#     element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[4]/div/p"), time=60)
-#     assert element.text == 'By integrating insights across various sectors, we equip decision-makers with the tools they need to anticipate challenges and seize opportunities with confidence.'
-#     is_url_same(home, "https://indonesiaindicator.com/i2-academy")
+def test_user_will_redirected_to_i2academy_page_when_user_click_i2academy_menu(browser_driver):   
+    driver = browser_driver
+    home = Home_page(driver)
+    navigate_url(home, home.url)
+    driver.fullscreen_window() 
+    take_page_screenshot(home.driver, "rendered web at the beginning")
+    home.click_btn(home.i2academy)
+    element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[4]/div/p"), time=60)
+    assert element.text == 'By integrating insights across various sectors, we equip decision-makers with the tools they need to anticipate challenges and seize opportunities with confidence.'
+    is_url_same(home, "https://indonesiaindicator.com/i2-academy")
 
-# def test_user_will_redirected_to_home_page_when_user_click_company_logo(browser_driver):   
-#     driver = browser_driver
-#     home = Home_page(driver)
-#     navigate_url(home, "https://indonesiaindicator.com/i2-academy")
-#     driver.fullscreen_window() 
-#     take_page_screenshot(home.driver, "rendered web at the beginning")
-#     home.click_btn(home.home_navbar)
-#     element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[4]/div/p"), time=60)
-#     assert element.text == 'We harness the power of We harness the power of Big Data, Data Science, and Generative AI to drive transformation and unlock new opportunities. Our cutting-edge analytics reveal hidden patterns, optimize processes, and deliver predictive insights, revolutionizing decision making process.'
-#     is_url_same(home, "https://indonesiaindicator.com/home")
+def test_user_will_redirected_to_home_page_when_user_click_company_logo(browser_driver):   
+    driver = browser_driver
+    home = Home_page(driver)
+    navigate_url(home, "https://indonesiaindicator.com/i2-academy")
+    driver.fullscreen_window() 
+    take_page_screenshot(home.driver, "rendered web at the beginning")
+    home.click_btn(home.home_navbar)
+    element = home.get_wait((By.XPATH, "//*[@id='root']/div[1]/div/section/div[4]/div/p"), time=60)
+    assert element.text == 'We harness the power of We harness the power of Big Data, Data Science, and Generative AI to drive transformation and unlock new opportunities. Our cutting-edge analytics reveal hidden patterns, optimize processes, and deliver predictive insights, revolutionizing decision making process.'
+    is_url_same(home, "https://indonesiaindicator.com/home")
 
 @allure.step("verify browser driver url is {url}")
 def is_url_same(POM_driver, url):
