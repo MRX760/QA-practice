@@ -1,4 +1,4 @@
-from .login_page import Login_page
+from .home_page import Home_page
 from .POM import POM
 
-__all__ = ["POM", "Login_page"]
+__all__ = ["POM", "Home_page"]
