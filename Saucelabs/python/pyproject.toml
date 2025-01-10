@@ -5,8 +5,8 @@ build-backend = "setuptools.build_meta"
 [tool.poetry]
 name = "test-package"
 version = "0.1.0"
-description = "A Python package for automated tests"
-authors = ["Your Name <your.email@example.com>"]
+description = "Python package for automated tests on Saucelabs"
+authors = ["Your Name sultanahmadalfath777@gmail.com"]
 packages = [
     { include = "page" },
     { include = "tests" }
