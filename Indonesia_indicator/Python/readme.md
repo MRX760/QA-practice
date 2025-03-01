@@ -2,7 +2,7 @@
 Test ini dibuat untuk keperluan proses rekrutmen sekaligus demonstrasi mengenai kemampuan untuk automation test dengan best-practices. Perlu diketahui bahwa terdapat **`test case`** pada folder **`indonesia indicator (parent folder ini)`**. Test script menggunakan framework **`pytest`** untuk eksekusi script dan **`allure`** untuk reporting test case.  Test script ini juga menggunakan **`POM`** (Page Object Model) yang dapat memudahkan maintenance kode ketika terjadi sebuah error. 
 
 # Warning
-Terdapat update dalam penggunaan Actionchains di repository ini, ada kemungkinan beberapa test case akan failed karena perubahan struktur POM dan penggunaan actionchains dalam melakukan interaksi web secara otomatis.
+Terdapat update dalam penggunaan Actionchains di repository ini, ada kemungkinan beberapa test case akan failed karena perubahan struktur POM dan penggunaan actionchains dalam melakukan interaksi web secara otomatis dan script kode yang belum diupdate.  
 
 # How to use
 Clone repository
