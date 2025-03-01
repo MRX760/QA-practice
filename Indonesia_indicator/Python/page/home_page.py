@@ -22,3 +22,8 @@ class Home_page(POM):
         self.i2academy = (By.XPATH, "//*[@id='navbar']/div/div/ul/li[5]/a")
         self.url = "https://indonesiaindicator.com/home"
         self.base_url = "https://indonesiaindicator.com"
+        
+        # self.img_xpath = (By.XPATH, '//*[@id="root"]/div[7]/div/section/div/div/div[2]/div[1]/div/a/img')
+        self.news_update_container = (By.XPATH, '//*[@id="root"]/div[7]')
+        self.news_update_button = (By.XPATH, '//*[@id="root"]/div[7]/div/section/div/div/div[2]/div[1]/div/div/a/button')
+        

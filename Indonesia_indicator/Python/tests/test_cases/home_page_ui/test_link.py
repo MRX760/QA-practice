@@ -35,7 +35,9 @@ def test_all_link_are_active(browser_driver):
     navigate_url(home, home.url)
     driver.fullscreen_window()
     links = get_elements(home, home.CTA_link, 'CTA link')
-    check(home, links)
+    for i in range (len(links)):
+        element = get_elements(home, home.CTA_link, 'CTA link')
+        check(home, element[i])
 
 @allure.step("check if link active")
 def check(POM_driver, links):
@@ -77,7 +79,8 @@ def get_elements(POM_driver, locator, element_name="(not specified)"):
 def check_clickable(POM_driver, elements, idx=0, stats=True):
     elements = filter_enabled_only(elements)
     elements = filter_displayed_only(elements)
-    elements = elements[idx:-1]
+    # for i in elements:
+    # elements = elements[idx:-1]
     for idx2, element in enumerate(elements):
         # print(f'{button.is_enabled()} {button.is_displayed()}')
         # if element.is_displayed() :
@@ -89,7 +92,14 @@ def check_clickable(POM_driver, elements, idx=0, stats=True):
             #     take_screenshots(POM_driver)
             # print(f'{element.get_attribute('class')} {element.get_attribute('id')}\n')
         # try:
+        # navigate_url(POM_driver=POM_driver, url=POM_driver.url)
+        # print(f"Begin searching xpath for index {idx2}")
+        # print(get_xpath(element, POM_driver=POM_driver))
+        # try:
         assert POM_driver.is_clickable(element) == True
+        # except Exception as e:
+        #     print(f"\n#########\n You're on {POM_driver.driver.current_url} \n#########\n")
+        #     print(e)
         # except Exception as e:
         #     if stats == True:
         #         check_clickable(POM_driver, get_elements(POM_driver, POM_driver.CTA_button, "CTA button (recapture)"), idx=idx+idx2+1, stats=False)
@@ -111,3 +121,25 @@ def filter_displayed_only(elements):
 @allure.step("Filter only enabled elements")
 def filter_enabled_only(elements):
     return [element for element in elements if element.is_displayed()]
+
+def get_xpath(el, POM_driver, xpath: str = ""):
+        # try:
+        print(f"\n#########\n You're on {POM_driver.driver.current_url} \n#########\n")
+        # print(f"{e} \n######### NEXT LINE ########\n")
+        if el.tag_name == "html":
+            return "/html" + xpath
+        
+        str = el.tag_name
+        parent = el.find_element("xpath", "..")
+        children = parent.find_elements("xpath", "*")
+        index = 0
+        for child in children:
+            if child.tag_name == el.tag_name:
+                index += 1
+                if child == el:
+                    elem_index = index
+        if index > 1:
+            str += f"[{elem_index}]"
+        str = "/" + str + xpath
+        return get_xpath(el = parent, POM_driver=POM_driver, xpath = str)
+        # except Exception as e:
