@@ -12,7 +12,7 @@ QA-practice/ # parent folder
   ├── Indonesia_indicator/
       ├── POM/  # Page Object Model classes for different web pages
       ├── tests/
-          ├── test_script # Individual test cases
+          ├── <test_script>.py # Individual test cases
           ├── tests/test_suite/  # Test suites that group multiple test cases
       ├── report/  # Allure reports are stored here (--alluredir=report)
       ├── pyproject.toml  # Poetry configuration
