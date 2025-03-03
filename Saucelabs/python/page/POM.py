@@ -25,8 +25,8 @@ class POM:
             ValueError: If identifier is non exist.
         """
         try:
-            self.action.move_to_element(identifier)
-            self.action.click(identifier)
+            self.action.move_to_element(self.get(identifier))
+            self.action.click(self.get(identifier))
             self.action.perform()
         except Exception as e:
             raise ValueError(f"Can't find button with identifier: {identifier}")
@@ -39,7 +39,8 @@ class POM:
             identifier (tuple): For example, (By.ID, "user-name") or else.
         """
         try:
-            self.action.move_to_element(identifier)
+            self.action.move_to_element(self.get(identifier))
+            self.action.perform()
         except Exception as e:
             raise(e)
 

@@ -7,6 +7,7 @@ import allure
 from allure_commons.types import AttachmentType
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 
 class Login_page(POM):
     def __init__(self, driver):
@@ -21,17 +22,25 @@ class Login_page(POM):
 
     @allure.step("Insert username as {username}")
     def insert_username(self, username:str) -> None:
-        self.action.click(self.username_col)
-        self.action.send_keys(username)
+        self.action.double_click(self.get(self.username_col))
+        if username != "":
+            self.action.send_keys(username)
+        else:
+            self.action.send_keys("a")
+            self.action.send_keys(Keys.BACKSPACE)
         self.action.perform()
     
     @allure.step("Insert password to be {password}")
     def insert_password(self, password:str) -> None:
-        self.action.click(self.password_col)
-        self.action.send_keys(password)
+        self.action.double_click(self.get(self.password_col))
+        if password != "":
+            self.action.send_keys(password)
+        else:
+            self.action.send_keys("a")
+            self.action.send_keys(Keys.BACKSPACE)
         self.action.perform()
     
-    @allure.step("Insert username as {username}, and with {password} as the password")
+    # @allure.step("Insert username as {username}, and with {password} as the password")
     def insert_credentials(self, username:str, password:str) -> None:
         self.insert_username(username)
         self.insert_password(password)
@@ -40,3 +49,7 @@ class Login_page(POM):
     def login_as(self,username:str, password:str) -> None:
         self.insert_credentials(username, password)
         self.click_btn(self.login_button)
+    
+    @allure.step("Execute script to make password field visible")
+    def make_pass_visible(self) -> None:
+        self.driver.execute_script("arguments[0].type = 'text';" , self.get(self.password_col))
