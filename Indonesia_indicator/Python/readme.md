@@ -4,6 +4,21 @@ Test ini dibuat untuk keperluan proses rekrutmen sekaligus demonstrasi mengenai 
 # Warning
 Terdapat update dalam penggunaan Actionchains di repository ini, ada kemungkinan beberapa test case akan failed karena perubahan struktur POM dan penggunaan actionchains dalam melakukan interaksi web secara otomatis dan script kode yang belum diupdate.  
 
+# Repository Structure
+For this website, it has following repository structure tree:
+
+```
+QA-practice/ # parent folder
+  ├── Indonesia_indicator/
+      ├── POM/  # Page Object Model classes for different web pages
+      ├── tests/
+          ├── test_script # Individual test cases
+          ├── tests/test_suite/  # Test suites that group multiple test cases
+      ├── report/  # Allure reports are stored here (--alluredir=report)
+      ├── pyproject.toml  # Poetry configuration
+      ├── poetry.lock  # Poetry lock file
+```
+
 # How to use
 Clone repository
 ```bash

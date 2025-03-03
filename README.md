@@ -11,8 +11,7 @@ QA-practice/
   ├── <website_name>/
       ├── POM/  # Page Object Model classes for different web pages
       ├── tests/
-          ├── tests/test_case/  # Individual test cases
-          ├── tests/test_suite/  # Test suites that group multiple test cases
+          ├── test_script # Behave as a test suite
       ├── report/  # Allure reports are stored here (--alluredir=report)
       ├── pyproject.toml  # Poetry configuration
       ├── poetry.lock  # Poetry lock file
