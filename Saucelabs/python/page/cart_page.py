@@ -10,7 +10,9 @@ class Cart_page(POM):
         self.cart_list = (By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]') #only 2 child when empty, more than 2 if cart exist
         self.cart_items = (By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]/div[3]')
         self.item_labels = (By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]')
-        self.item_name = '//*[@id="item_4_title_link"]'
+        # self.item_name = '//*[@id="item_4_title_link"]'
+        self.checkout_btn = (By.XPATH, '//*[@id="checkout"]')
+        
         
     @step("Checking if cart is empty")
     def is_cart_empty(self):

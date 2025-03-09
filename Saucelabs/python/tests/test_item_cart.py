@@ -18,9 +18,8 @@ from .test_login import test_login_correct_credentials as login
 @pytest.fixture(autouse=True)
 def set_allure_labels():
     allure.dynamic.feature("item-filter")
-    # allure.dynamic.severity(allure.severity_level.MINOR)
     allure.dynamic.suite("Validate item cart functionality")
-    allure.dynamic.story("User can add item on cart")
+    allure.dynamic.story("User can add, remove, and see item details on cart")
 
 @pytest.fixture(scope="function")
 def browser_driver():
@@ -49,6 +48,7 @@ def user_login(redirect):
 
 @step("User add item to cart")
 @title("[Positive] Verify user can add item to cart")
+@severity(allure.severity_level.BLOCKER)
 def test_add_item(user_login):
     driver = user_login
     item_page = Inventory_page(driver)
@@ -73,6 +73,7 @@ def test_add_item(user_login):
 
 @step("User remove item from cart")
 @title("[Positive] Verify user can remove item from cart")
+@severity(allure.severity_level.BLOCKER)
 def test_remove_item(user_login):
     driver = user_login
     item_page = Inventory_page(driver)
@@ -101,6 +102,7 @@ def test_remove_item(user_login):
 
 @step("Check cart icon bubble number")
 @title("[Positive] Verify cart icon will show number of item inside cart")
+@severity(allure.severity_level.MINOR)
 def test_cart_icon(user_login):
     driver = user_login
     item_page = Inventory_page(driver)
@@ -129,6 +131,7 @@ def test_cart_icon(user_login):
 
 # @step("")
 @title("[Positive] Verify user can see item details when clicking on item title inside cart")
+@severity(allure.severity_level.CRITICAL)
 def test_item_title_cart(user_login):
     driver = user_login
     item_page = Inventory_page(driver)
@@ -163,6 +166,7 @@ def test_item_title_cart(user_login):
 
 # @step("")
 @title("[Positive] Verify user can see item details when clicking on item title inside cart")
+@severity(allure.severity_level.BLOCKER)
 def test_item_title_cart(user_login):
     driver = user_login
     item_page = Inventory_page(driver)
